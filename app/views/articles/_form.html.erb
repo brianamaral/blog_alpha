@@ -7,15 +7,23 @@
 <% end %>
 
 <%=form_for @article do |f|%>
-    <p>
-        <%=f.label :title %> </br>
-        <%=f.text_field :title %>
-    </p>
-    <p>
+<div class="row">
+      <div class="col-sm-8">
+        <div class="form-group">
+          <%= f.label :title%>
+          <%= f.text_field :title,class:"form-control" %>
+        </div>
+      </div>
+    </div>
+<div class = "row">
+    <div class = "col-sm-8">
+        <div class = "form-group">
         <%= f.label :description %> <br/>
-        <%= f.text_area :description %>
-    </p>
-    <p>
-        <%=f.submit %>
-    </p>    
+        <%= f.text_area :description,rows:6,class:"form-control" %>
+        </div>
+    </div>
+</div>
+    
+        <%=f.submit "Create",class:"btn btn-primary" %>
+      
 <% end %>

@@ -10,10 +10,13 @@
   </head>
 
   <body>
-  <%flash.each do |name,msg| %>
-      <p><%= msg %></p>
-    <%end%>
-    <%= yield %>
-    
+<%= nav_bar brand: "Home", brand_link: root_path  %>
+  <div class="container">
+    <%flash.each do |name,msg| %>
+        <p><%= msg %></p>
+      <%end%>
+      <%= yield %>
+  </div>
+   
   </body>
 </html>
