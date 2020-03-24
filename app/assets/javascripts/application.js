@@ -1,5 +1,8 @@
 //= require jquery
 //= require bootstrap-sprockets
-//= require jquery-ujs
+//= require popper
 //= require turbolinks
 //= require_tree .
+
+$('.dropdown-toggle').dropdown();
+

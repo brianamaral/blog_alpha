@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>BlogAlpha</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-<%= nav_bar brand: "Home", brand_link: root_path  %>
-  <div class="container">
-    <%flash.each do |name,msg| %>
+<body>
+    <%= render 'layouts/navbar'%>
+    <div class="container">
+        <%flash.each do |name,msg| %>
         <p><%= msg %></p>
-      <%end%>
-      <%= yield %>
-  </div>
-   
-  </body>
+        <%end%>
+
+        <%= yield %>
+    </div>
+    <%=render 'layouts/footer'%>
+</body>
+
 </html>

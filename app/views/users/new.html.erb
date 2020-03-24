@@ -1,0 +1,30 @@
+<%=form_for @user do |f|%>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <%= f.label :username%>
+            <%= f.text_field :username,placeholde:"Enter username",class:"form-control" %>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <%= f.label :email %> <br />
+            <%= f.email_field :email,placeholde:"Enter email",class:"form-control" %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <%= f.label :password %> <br />
+            <%= f.password_field :password,class:"form-control" %>
+        </div>
+    </div>
+</div>
+
+<%=f.submit "Sign up",class:"btn btn-primary" %>
+
+<% end %>
