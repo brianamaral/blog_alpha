@@ -64,5 +64,14 @@ footer ul{
     float: right;
 }
 
+well {
+    background-color: green($color: #000000);
+}
+
+.article-actions{
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
+}
+
 
  @import "bootstrap";

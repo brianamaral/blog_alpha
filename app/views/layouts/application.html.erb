@@ -12,11 +12,8 @@
 
 <body>
     <%= render 'layouts/navbar'%>
+    <%= render 'layouts/flash'%>
     <div class="container">
-        <%flash.each do |name,msg| %>
-        <p><%= msg %></p>
-        <%end%>
-
         <%= yield %>
     </div>
     <%=render 'layouts/footer'%>
