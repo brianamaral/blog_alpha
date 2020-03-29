@@ -8,9 +8,11 @@
         <h2 class="card-header"><%=article.title%></h2>
         <div class="card-body">
             <h5 class="card-title"><%=article.description%></h5>
-            <%= link_to  "Edit", edit_article_path(article),class:"btn btn-success"  %>
-            <%= link_to "Show", article_path(article),class:"btn btn-primary"  %>
-            <%=link_to "Delete",article_path(article),method: :delete,data:{confirm:"Are you sure?"},class:"btn btn-danger"%>
+            <% if article.user == current_user%>
+                <%= link_to  "Edit", edit_article_path(article),class:"btn btn-success"  %>
+                <%= link_to "Show", article_path(article),class:"btn btn-primary"  %>
+                <%=link_to "Delete",article_path(article),method: :delete,data:{confirm:"Are you sure?"},class:"btn btn-danger"%>
+            <%end%>
         </div>
     </div>
     <br>

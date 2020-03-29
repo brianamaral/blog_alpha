@@ -7,25 +7,30 @@ before_action :set_article,only:[:edit,:update,:destroy,:show]
     end
 
     def new
-        @article = Article.new 
+        require_user
+        @article = Article.new      
     end
 
     def edit
-        
+        if set_article.user != current_user
+            redirect_to root_path,message:"Only the owner of the article can perform this action"
+        end
     end
 
     def update
-        
-        if @article.update article_params
-            flash[:notice] = "Article was sucessfully updated!"
-            redirect_to article_path(@article)
-        else
-            render 'edit'
+        if @article.user == current_user
+            if @article.update article_params
+                flash[:notice] = "Article was sucessfully updated!"
+                redirect_to article_path(@article)
+            else
+                render 'edit'
+            end
         end
     end
 
     def create 
         @article = Article.new article_params
+        @article.user = current_user
         @article.save
         if @article.save  
             redirect_to article_path(@article)
